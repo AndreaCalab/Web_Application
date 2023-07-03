@@ -1,0 +1,15 @@
+<h2>Immobile:</h2>
+<div class="form-group">
+<select type="radio" name="immobile" id="immobile">
+<option *ngFor="let imm of immobili">
+<a>{{imm.descrizione}}</a>
+<a>;</a>
+<a>{{imm.posizione}}</a>
+</option>
+</select>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Inserire recensione" id="recensione" name="recensione">
+</div>
+<p>
+<input type="submit" value="Inserisci" class="btn btn-primary" (click)="addReview()">

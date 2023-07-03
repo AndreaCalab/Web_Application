@@ -1,0 +1,25 @@
+<div *ngIf="isLogged === true">
+  <h2>{{title}}</h2>
+  <p>
+  <a routerLink="visualizzaimmobili" [queryParams]="{jsessionid: sessionId}">Visualizza Annunci</a>
+  </p>
+  <p>
+  <a routerLink="addannuncio" [queryParams]="{jsessionid: sessionId}">Aggiungi Annuncio</a>
+  </p>
+  <p>
+    <a routerLink="updateannucio" [queryParams]="{jsessionid: sessionId}">Modifca Annunci</a>
+    </p>
+    <p>
+      <a routerLink="enterreview" [queryParams]="{jsessionid: sessionId}">Aggiungi Recensione</a>
+    </p>
+  <div *ngIf="tipo[0]==='amministratore'">
+    <h2>Impostazioni Amministratore:</h2>
+    <p>
+      <a routerLink="adminusers" [queryParams]="{jsessionid: sessionId}">Gestisci utenti</a>
+    </p>
+    </div>
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="isLogged === false">
+  <p>Mi dispiace non sei autorizzato</p>
+</div>

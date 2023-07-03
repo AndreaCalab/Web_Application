@@ -1,0 +1,92 @@
+<header>
+    <h1>Gestisci Annunci:</h1>
+</header>
+    <h2>Elenco Annunci:</h2>
+    <ol *ngFor="let imm of immobili" >
+    <li>
+        <a>{{imm.id}}</a>
+        <a>; </a>
+        <a>{{imm.descrizione}}</a>
+        <a>; </a>
+        <a>{{imm.posizione}}</a>
+        <a>; Metri quadri:</a>
+        <a>{{imm.metri_quadri}}</a>
+        </li>
+    </ol>
+    
+    <div>
+    <h1>Elimina annuncio:</h1>
+    <!-- Tabella per eliminare annuncio dell'immobile -->
+    <table border="1">
+    <thead>
+    <tr>
+    <th>Id:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>
+    <select id="id">
+        <option *ngFor="let imm of immobili">
+        {{imm.id}}
+        </option>
+    </select>
+    </td>
+    <td>
+    <input type="submit" value="applica" id="applica"  class="btn btn-primary" (click)="delete()" />
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    
+    <!-- Tabella per modificare annuncio dell'immobile -->
+    
+    
+    <h1>Modifica annuncio:</h1>
+    <table border="1">
+    <thead>
+    <tr>
+    <th>Id:</th>
+    <th>Categoria:</th>
+    <th>Descrizione:</th>
+    <th>Posizione:</th>
+    <th>Prezzo:</th>
+    <th>Metri quadri:</th>
+    <th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+        <select id="id2">
+            <option *ngFor="let imm of immobili">
+            <a>{{imm.id}}</a>
+            </option>
+        </select>
+        </td>
+        <td>
+        <select id="categoria">
+            <option *ngFor="let cat of categoria">{{cat}}</option>
+        </select>
+        </td>
+        <td>
+        <input type="text" name="descrizione" id="descrizione" >
+        </td>
+        <td>
+        <input type="text" name="posizione" id="posizione">
+        </td>
+        <td>
+        <input type="number" name="prezzo" value="0" id="prezzo">
+        </td>
+        <td>
+        <input type="number" name="metri_quadri" value="0" id="metri_quadri">
+        </td>
+        <td>
+            <input type="submit" value="applica"  class="btn btn-primary" (click)="Update()">
+        </td>
+        </tr>
+
+    </tbody>
+    </table>
+    

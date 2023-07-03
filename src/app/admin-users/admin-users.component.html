@@ -1,0 +1,25 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nome:</th>
+	        <th>Cognome:</th>
+	        <th>Email:</th>
+	        <th>Username:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ut of utenti">
+            <td>{{ut.nome}}</td>
+            <td>{{ut.cognome}}</td>
+            <td>{{ut.email}}</td>
+            <td>{{ut.username}}</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <input type="text" id="username" name="username" placeholder="Inserisci username">
+    <select id="opzione">
+   <option *ngFor="let op of opzioni">{{op}}</option>
+    </select>
+    <input type="submit" class="btn btn-primary" value="applica" (click)="promoteOrBan()">
+</div>

@@ -1,0 +1,118 @@
+
+<header>
+    <h1>Immobili</h1>
+</header>
+<div>
+<h3>Ordina per:</h3>
+<select>
+<option id="filtro" *ngFor="let op of opzioni" (click)="setFiltro(op)">{{op}}</option>
+</select>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Categoria</th>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Prezzo</th>
+        <th scope="col">Posizione</th>
+        <th scope="col">Metri quadri</th>
+        <th scope="col">Proprietario</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let imm of immobili">
+            <td>{{imm.categoria}}</td>
+            <td>{{imm.descrizione}}</td>
+            <td>{{imm.prezzo}}</td>
+            <td>{{imm.posizione}}</td>
+            <td>{{imm.metri_quadri}}</td>
+            <td>{{imm.proprietario}}</td>
+        </tr>
+    </tbody>
+</table>
+<header>
+    <h1>Recensione Immobili:</h1>
+</header>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Immobile:</th>
+            <th>Utente:</th>
+            <th>Recensione:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rec of recensioni">
+          <td >{{rec.immobile}}</td>
+          <td >{{rec.utente}}</td>
+          <td >{{rec.descrizione}}</td>  
+        </tr>
+    </tbody>
+</table>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<input type="submit" class="btn btn-primary" value="applica" (click)="setFilter()">
+<ul >
+    <li *ngFor="let imm of immobili">
+    <article>
+    
+    <h2>{{imm.categoria}}</h2>
+     
+     <p><img src="img/annuncio.jpg" class="image" alt="your logo" title="your logo" height="maxcdn" width="500"></p>
+     
+     <p>
+     <a>Categoria:</a>
+     <a>{{imm.categoria}}</a>
+     </p>
+     
+    <p>
+     <a>Posizione:</a>
+    <a>{{imm.posizione}}</a>
+    </p>
+    
+    <p>
+    <a>Metri quadri:</a>
+    <a>{{imm.metri_quadri}}</a>
+    </p>
+    
+    <p>
+    <a>Prezzo(€):</a>
+    <a>{{imm.prezzo}}</a>
+    </p>
+    
+    <p>
+    <a>Proprietario:</a>
+    <a>{{imm.proprietario}}</a>
+    </p>
+    </article>
+    </li>
+    </ul>
+</div>
+    <div>
+    <a>Recensioni:</a>
+    <ol *ngFor="let rec of recensioni">
+    <li *ngIf="imm.descrizione==rec.immobile">
+    <a>{{rec.immobile}}</a>
+    <a>:</a>
+    <a>{{rec.descrizione}}</a>
+    </li>
+    </ol>
+    </div>
+    </article>
+    </li>
+    </ul>
+</div>
+-->
